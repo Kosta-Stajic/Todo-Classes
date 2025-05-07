@@ -22,7 +22,7 @@ class DomManipulation {
             this.renderTasks(taskData, mainBar);
             
             // If task was completed, check the checkbox
-            if (taskData.completed) {
+            if (taskData.isCompleted) {
                 const taskElement = document.querySelector(`.todoCards[data-id="${taskData.taskId}"]`);
                 const checkbox = taskElement.querySelector('.checkmark');
                 checkbox.checked = true;
@@ -163,6 +163,7 @@ class DomManipulation {
         checkbox.addEventListener("change", () => {
             element.classList.toggle("checked")
             this.taskManager.isCompleted(taskData)
+            console.log(task.todos)
         })
     }
 
@@ -217,6 +218,7 @@ class DomManipulation {
         //editButton event
         editButton.addEventListener("click", () => {
             this.editDialog(taskObject)
+            
         })
 
         //edit img

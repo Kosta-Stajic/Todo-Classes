@@ -21,7 +21,7 @@ import { Todo } from "./todo";
     }
 
     editTask (task) {
-        task.editDetails(title,description, priority, dueDate)
+        task.editDetails(title, description, priority, dueDate)
         this.saveToLocalStorage()
     }
 
